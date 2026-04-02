@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap");
+ 
+/* ── Navbar shell ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 242, 236, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e8e4dd;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+/* ── Brand ── */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+ 
+.navbar-brand-name {
+  font-family: "DM Serif Display", serif;
+  font-size: 19px;
+  color: #2d5a3d;
+  letter-spacing: -0.3px;
+}
+ 
+/* ── Right side ── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+ 
+.navbar-current-page {
+  font-size: 13px;
+  color: #9c9a92;
+  display: none;
+}
+ 
+@media (min-width: 600px) {
+  .navbar-current-page { display: block; }
+}
+ 
+/* ── User pill ── */
+.navbar-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e8e4dd;
+  border-radius: 20px;
+  padding: 5px 12px 5px 5px;
+}
+ 
+.navbar-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2d5a3d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.navbar-username {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a4a47;
+  display: none;
+}
+ 
+@media (min-width: 480px) {
+  .navbar-username { display: block; }
+}
+ 
+/* ── Hamburger button ── */
+.hamburger-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid #e8e4dd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: border-color 0.15s, background 0.15s;
+  padding: 0;
+  flex-shrink: 0;
+}
+ 
+.hamburger-btn:hover { border-color: #c8b89a; background: #faf8f4; }
+.hamburger-btn.is-open { border-color: #2d5a3d; background: #f0f7f2; }
+ 
+.ham-line {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: #4a4a47;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+ 
+/* Animate to X when open */
+.is-open .ham-line-1 { transform: translateY(6.5px) rotate(45deg); }
+.is-open .ham-line-2 { opacity: 0; transform: scaleX(0); }
+.is-open .ham-line-3 { transform: translateY(-6.5px) rotate(-45deg); }
+ 
+/* ── Dropdown ── */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  overflow: hidden;
+  animation: dropIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  z-index: 200;
+}
+ 
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+ 
+/* ── Dropdown header ── */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 14px;
+}
+ 
+.dropdown-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2d5a3d;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.dropdown-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a18;
+}
+ 
+.dropdown-role {
+  font-size: 12px;
+  color: #9c9a92;
+  margin-top: 1px;
+}
+ 
+/* ── Divider ── */
+.dropdown-divider {
+  height: 1px;
+  background: #f0ece6;
+  margin: 0;
+}
+ 
+/* ── Section label ── */
+.dropdown-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #b8b4ac;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 16px 4px;
+}
+ 
+/* ── Nav items ── */
+.dropdown-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 8px;
+  gap: 2px;
+}
+ 
+.dropdown-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: "DM Sans", sans-serif;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+ 
+.dropdown-nav-item:hover { background: #faf8f4; }
+ 
+.dropdown-nav-item.active { background: #f0f7f2; }
+ 
+.dni-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f5f2ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b6960;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+ 
+.dropdown-nav-item:hover .dni-icon { background: #e8e4dd; color: #2c2c2a; }
+.dropdown-nav-item.active .dni-icon { background: #d4ead9; color: #2d5a3d; }
+ 
+.dni-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+ 
+.dni-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a18;
+}
+ 
+.dni-desc {
+  font-size: 11px;
+  color: #9c9a92;
+}
+ 
+.dni-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2d5a3d;
+  flex-shrink: 0;
+}
+ 
+/* ── Sign out ── */
+.dropdown-signout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e24b4a;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.dropdown-signout:hover { background: #fef2f2; }

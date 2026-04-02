@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap");
+ 
+.survey-page {
+  min-height: 100vh;
+  background: #f5f2ec;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.survey-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(245, 242, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e8e4dd;
+}
+ 
+.header-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.survey-brand {
+  font-family: "DM Serif Display", serif;
+  font-size: 18px;
+  color: #2d5a3d;
+  letter-spacing: -0.3px;
+}
+ 
+.survey-time { font-size: 13px; color: #9c9a92; }
+ 
+.survey-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+ 
+.survey-intro { margin-bottom: 32px; }
+ 
+.survey-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 32px;
+  color: #1a1a18;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+ 
+.survey-desc { font-size: 15px; color: #6b6960; line-height: 1.65; }
+ 
+.progress-wrap { margin-bottom: 28px; }
+ 
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+ 
+.progress-label { font-size: 13px; font-weight: 500; color: #4a4a47; }
+.progress-pct { font-size: 13px; color: #9c9a92; }
+ 
+.progress-track {
+  height: 3px;
+  background: #e8e4dd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+ 
+.progress-fill {
+  height: 100%;
+  background: #2d5a3d;
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+.step-dots { display: flex; gap: 6px; align-items: center; }
+ 
+.step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e8e4dd;
+  transition: all 0.3s;
+  display: inline-block;
+}
+ 
+.step-dot.active { background: #2d5a3d; width: 18px; border-radius: 4px; }
+.step-dot.done { background: #2d5a3d; opacity: 0.4; }
+ 
+.question-card {
+  background: #ffffff;
+  border: 1px solid #e8e4dd;
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-bottom: 20px;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+ 
+.card-visible { opacity: 1; transform: translateX(0); }
+.card-hidden.from-right { opacity: 0; transform: translateX(24px); }
+.card-hidden.from-left { opacity: 0; transform: translateX(-24px); }
+ 
+.q-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+ 
+.q-number {
+  font-family: "DM Serif Display", serif;
+  font-size: 13px;
+  color: #b8b4ac;
+  letter-spacing: 0.05em;
+}
+ 
+.q-required-badge {
+  font-size: 11px; font-weight: 500; padding: 2px 8px;
+  background: #fdf3e7; color: #9a6120;
+  border-radius: 20px; border: 1px solid #f5ddb5;
+}
+ 
+.q-type-badge {
+  font-size: 11px; font-weight: 500; padding: 2px 8px;
+  background: #f0f7f2; color: #2d5a3d;
+  border-radius: 20px; border: 1px solid #c6dece;
+  text-transform: capitalize;
+}
+ 
+.q-text {
+  font-family: "DM Serif Display", serif;
+  font-size: 20px; color: #1a1a18;
+  line-height: 1.4; margin-bottom: 22px; letter-spacing: -0.2px;
+}
+ 
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+ 
+.btn-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border-radius: 10px;
+  border: 1.5px solid #e8e4dd; background: transparent;
+  font-size: 14px; font-weight: 500; color: #6b6960;
+  cursor: pointer; transition: all 0.15s;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.btn-back:hover { border-color: #c8b89a; color: #2c2c2a; background: #faf8f4; }
+ 
+.btn-next {
+  display: flex; align-items: center; gap: 6px;
+  padding: 12px 28px; border-radius: 10px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+  border: none; font-family: "DM Sans", sans-serif;
+}
+ 
+.btn-next.enabled { background: #2d5a3d; color: #fff; }
+.btn-next.enabled:hover { background: #234830; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,90,61,0.3); }
+.btn-next.enabled:active { transform: translateY(0); }
+.btn-next.disabled { background: #e8e4dd; color: #b8b4ac; cursor: not-allowed; }
+ 
+.keyboard-hint { text-align: center; font-size: 12px; color: #b8b4ac; margin-top: 16px; }
+ 
+.keyboard-hint kbd {
+  display: inline-block; padding: 1px 6px;
+  border: 1px solid #dbd8d2; border-radius: 4px;
+  font-size: 11px; font-family: "DM Sans", sans-serif;
+  background: #faf8f4; color: #9c9a92;
+}
+ 
+.success-screen {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center; padding: 48px 24px;
+}
+ 
+.success-icon-wrap {
+  margin-bottom: 24px;
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+ 
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+ 
+.success-svg { width: 64px; height: 64px; }
+.success-title { font-family: "DM Serif Display", serif; font-size: 32px; color: #1a1a18; margin-bottom: 10px; }
+.success-sub { font-size: 15px; color: #6b6960; line-height: 1.6; max-width: 400px; margin-bottom: 32px; }
+ 
+.success-summary {
+  width: 100%; background: #fff;
+  border: 1px solid #e8e4dd; border-radius: 14px;
+  padding: 20px 24px; margin-bottom: 28px; text-align: left;
+}
+ 
+.summary-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  color: #9c9a92; text-transform: uppercase; margin-bottom: 14px;
+}
+ 
+.summary-item {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 0; border-bottom: 1px solid #f0ece6;
+}
+ 
+.summary-item:last-child { border-bottom: none; }
+.summary-q { font-size: 13px; color: #6b6960; line-height: 1.4; }
+.summary-a { font-size: 14px; font-weight: 500; color: #2c2c2a; }
+.no-answer { color: #b8b4ac; font-style: italic; font-weight: 400; }
+ 
+.btn-restart {
+  padding: 12px 28px; border-radius: 10px;
+  border: 1.5px solid #e8e4dd; background: transparent;
+  font-size: 14px; font-weight: 500; color: #6b6960;
+  cursor: pointer; transition: all 0.15s;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.btn-restart:hover { border-color: #c8b89a; color: #2c2c2a; background: #faf8f4; }
+ 
+@media (max-width: 640px) {
+  .survey-container { padding: 24px 16px 60px; }
+  .question-card { padding: 24px 20px; }
+  .survey-title { font-size: 26px; }
+  .q-text { font-size: 18px; }
+  .rating-btn { width: 38px; height: 38px; font-size: 13px; }
+}

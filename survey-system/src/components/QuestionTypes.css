@@ -1,0 +1,175 @@
+/* ── Option items (shared by radio + checkbox) ── */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  user-select: none;
+  background: #fff;
+}
+ 
+.option-item:hover {
+  border-color: #c8b89a;
+  background: #faf8f4;
+  transform: translateX(2px);
+}
+ 
+.option-item.selected {
+  border-color: #2d5a3d;
+  background: #f0f7f2;
+}
+ 
+/* Radio indicator */
+.option-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #c8b89a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s;
+}
+ 
+.option-item.selected .option-indicator {
+  border-color: #2d5a3d;
+  background: #2d5a3d;
+}
+ 
+.option-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+ 
+.option-item.selected .option-inner {
+  opacity: 1;
+}
+ 
+/* Checkbox indicator */
+.checkbox-indicator {
+  border-radius: 6px;
+  color: transparent;
+}
+ 
+.option-item.selected .checkbox-indicator {
+  background: #2d5a3d;
+  border-color: #2d5a3d;
+  color: #fff;
+}
+ 
+.check-icon {
+  width: 12px;
+  height: 12px;
+}
+ 
+.option-label {
+  font-size: 15px;
+  color: #2c2c2a;
+  line-height: 1.4;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+/* ── Rating ── */
+.rating-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.rating-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+ 
+.rating-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  border: 1.5px solid #e8e4dd;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b6960;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: "DM Sans", sans-serif;
+}
+ 
+.rating-btn:hover,
+.rating-btn.hovered {
+  border-color: #c8b89a;
+  background: #faf8f4;
+  color: #2c2c2a;
+}
+ 
+.rating-btn.selected {
+  background: #2d5a3d;
+  border-color: #2d5a3d;
+  color: #fff;
+}
+ 
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #9c9a92;
+  font-family: "DM Sans", sans-serif;
+  padding: 0 2px;
+}
+ 
+/* ── Textarea ── */
+.textarea-wrap {
+  position: relative;
+}
+ 
+.survey-textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 14px 16px;
+  padding-bottom: 28px;
+  font-size: 15px;
+  font-family: "DM Sans", sans-serif;
+  color: #2c2c2a;
+  background: #fff;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 10px;
+  line-height: 1.6;
+  transition: border-color 0.15s;
+  outline: none;
+  box-sizing: border-box;
+}
+ 
+.survey-textarea:focus {
+  border-color: #2d5a3d;
+}
+ 
+.survey-textarea::placeholder {
+  color: #b8b4ac;
+}
+ 
+.char-count {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 11px;
+  color: #b8b4ac;
+  font-family: "DM Sans", sans-serif;
+  pointer-events: none;
+}

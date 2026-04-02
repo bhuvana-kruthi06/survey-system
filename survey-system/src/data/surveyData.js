@@ -1,0 +1,66 @@
+export const sampleSurvey = {
+  id: "survey-001",
+  title: "Customer Experience Survey",
+  description:
+    "Help us understand your experience and shape the future of our product. Takes about 3 minutes.",
+  estimatedTime: "3 min",
+  questions: [
+    {
+      id: "q1",
+      type: "radio",
+      required: true,
+      text: "How did you first hear about us?",
+      options: [
+        "Search engine (Google, Bing…)",
+        "Social media",
+        "Friend or colleague",
+        "Online advertisement",
+        "Blog or article",
+      ],
+    },
+    {
+      id: "q2",
+      type: "checkbox",
+      required: true,
+      text: "Which features do you use most often? (select all that apply)",
+      options: [
+        "Survey builder",
+        "Results dashboard",
+        "Data export",
+        "Team collaboration",
+        "Templates library",
+        "API integrations",
+      ],
+    },
+    {
+      id: "q3",
+      type: "rating",
+      required: true,
+      text: "How satisfied are you with our product overall?",
+      min: 1,
+      max: 10,
+      lowLabel: "Not satisfied",
+      highLabel: "Extremely satisfied",
+    },
+    {
+      id: "q4",
+      type: "radio",
+      required: true,
+      text: "How likely are you to recommend us to a friend or colleague?",
+      options: [
+        "Definitely would recommend",
+        "Probably would recommend",
+        "Not sure",
+        "Probably would not recommend",
+        "Definitely would not recommend",
+      ],
+    },
+    {
+      id: "q5",
+      type: "textarea",
+      required: false,
+      text: "Any additional comments, suggestions, or feedback?",
+      placeholder: "Share your thoughts here — we read every response…",
+    },
+  ],
+};
